@@ -4,32 +4,18 @@
     ViewData["Title"] = "Home Page";
 }
 <!--Categories Section Begin-->
-<div class="mt-4">
-<div class="row">
-    <div class="col-12">
 
-            
-                <div class="d-flex flex-nowrap">
+<section id="categories-1" class="d-flex  justify-content-center vw-100">
+    <div class="my categories w=100 d-flex flex-wrap justify-content-between">
+        @foreach (var item in Model)
+        {
+            <img src=@item.imgName width="128" height="188.23529411764704" loading="lazy" style="border-radius: 0px; object-fit: fill; cursor: default;">
 
-                    @foreach (var item in Model)
-                {          
-                    <div class="card">
-                        <img src=@item.imgName class="card-img-top" alt=@item.dishHeadName />
-                        <div class="card-body">
-                            @item.dishHeadName
-                        </div>
-
-                    </div>
-                            
-                        
-                }
-                   
-            </div>
-        
-
+        }
     </div>
-    </div>
-    </div>
-    
+</section>
 
-    <!--Categories Section End -->
+
+
+
+<!--Categories Section End -->

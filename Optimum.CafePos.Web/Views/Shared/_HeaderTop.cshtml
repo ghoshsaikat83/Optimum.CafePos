@@ -1,40 +1,22 @@
-﻿<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <!-- Logo -->
-        <a class="navbar-brand" href="#">Your Logo</a>
-        <!-- Location -->
-        <a class="nav-link dropdown-toggle" href="#" id="locationDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            My Location
-        </a>
-        <div class="dropdown-menu" aria-labelledby="locationDropdown">
-            <a class="dropdown-item" href="#">Soharam</a>
-        </div>
-        <!-- Navbar Toggler -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Navbar Items -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <!-- Search Bar -->
-                <li class="nav-item ms-2">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search...">
-                    </div>
-                </li>
-                <!-- Login -->
-                <!-- Login Button -->
-                <li class="nav-item ms-2">
-                    <button class="btn btn-primary" type="button">Login</button>
-                </li>
-                <!-- My Cart -->
-                <li class="nav-item ms-2">
-                    <button class="btn btn-success"><i class="fa fa-shopping-cart"></i> My Cart</button>
-                </li>
-            </ul>
-        </div>
+﻿<nav class="bg-light border-bottom px-4 py-2 d-flex justify-content-between align-items-center">
+    <!-- Logo -->
+    <a href="/">Your Logo</a>
+    <!-- Location -->
+    <div class="location">
+        <div class="vertical-line"></div>
+        <h5>Delivery in 9 minutes</h5>
+        <p>Kolkata,West Bengal,India <i class="fa-solid fa-caret-down"></i></p>
     </div>
+
+    <div class="search-div">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" class="search-input" placeholder="'Search bread'">
+        <!-- Login -->
+        <!-- Login Button -->
+        <button class="btn btn-lg">Login</button>
+        <button class="btn btn-lg btn-success my-cart rounded-4 px=3 py=3"><i class="fa-solid fa-cart-shopping"></i>My cart</button>
+    </div>
+
 </nav>
 
 
