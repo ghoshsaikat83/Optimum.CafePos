@@ -1,0 +1,35 @@
+﻿@using Optimum.CafePos.Models
+@model IEnumerable<ItemHead>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<!--Categories Section Begin-->
+<div class="mt-4">
+<div class="row">
+    <div class="col-12">
+        <div class="overflow-auto">
+                <div class="d-flex flex-nowrap">
+                    
+                @foreach (var item in Model)
+                {                      
+                           
+                    <div class="card">
+                        <img src=@item.imgName class="card-img-top" alt=@item.dishHeadName />
+                        <div class="card-body">
+                            @item.dishHeadName
+                        </div>
+
+                    </div>
+                            
+                        
+                }
+                   
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+    
+
+    <!--Categories Section End -->

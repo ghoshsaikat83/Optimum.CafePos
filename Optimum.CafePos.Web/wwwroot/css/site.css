@@ -1,0 +1,39 @@
+.input-validation-error {
+    border: solid 1px #ff0000 !important;
+}
+
+.custom-alerts ul {
+    margin-bottom: 0 !important;
+    padding-left: 15px;
+}
+
+label.required:after {
+    content: "*";
+    color: #f56565;
+}
+
+label.pre-required:before {
+    content: "*";
+    color: #f56565;
+}
+
+.blockOverlay {
+    z-index: 2000 !important
+}
+
+.blockUI.blockMsg.blockPage {
+    width: 10% !important;
+    min-width: 145px !important;
+    left: 45% !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .blockUI.blockMsg.blockPage {
+        min-width: 145px !important;
+        left: 35% !important;
+    }
+}
+
+.line-through {
+    text-decoration: line-through;
+}
