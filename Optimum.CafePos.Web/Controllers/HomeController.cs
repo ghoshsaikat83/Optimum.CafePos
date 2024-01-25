@@ -30,23 +30,26 @@ namespace Optimum.CafePos.Web.Controllers
             var result = await httpClientWrapper.GetAsync("androiddishhead?locationShortName=sohanram");
 
             // Making a POST request
-           // var requestData = new MyRequestClass { /* ... */ };
-           // var postResult = await httpClientWrapper.PostAsync<MyRequestClass, MyResponseClass>("/endpoint", requestData);
-            
+            // var requestData = new MyRequestClass { /* ... */ };
+            // var postResult = await httpClientWrapper.PostAsync<MyRequestClass, MyResponseClass>("/endpoint", requestData);
 
-           /* List<ItemHead> itemHeadList = new List<ItemHead>();
-            HttpResponseMessage httpResponseMessage = _httpClient.GetAsync(baseAddress + "androiddishhead?locationShortName=sohanram").Result;
-            
-            if(httpResponseMessage.IsSuccessStatusCode)
-            {
-                string data = httpResponseMessage.Content.ReadAsStringAsync().Result;
-                itemHeadList = JsonConvert.DeserializeObject<List<ItemHead>>(data);
-            }    
-           */  
-           
-            
 
-            
+            /* List<ItemHead> itemHeadList = new List<ItemHead>();
+             HttpResponseMessage httpResponseMessage = _httpClient.GetAsync(baseAddress + "androiddishhead?locationShortName=sohanram").Result;
+
+             if(httpResponseMessage.IsSuccessStatusCode)
+             {
+                 string data = httpResponseMessage.Content.ReadAsStringAsync().Result;
+                 itemHeadList = JsonConvert.DeserializeObject<List<ItemHead>>(data);
+             }    
+            */
+
+            var category = result.First();
+            category.IsSelected = true;
+
+
+
+
             return View(result);
         }
 

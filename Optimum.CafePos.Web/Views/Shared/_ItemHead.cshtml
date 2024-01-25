@@ -5,17 +5,20 @@
 }
 <!--Categories Section Begin-->
 
-<section id="categories-1" class="d-flex  justify-content-center vw-100">
-    <div class="my categories w=100 d-flex flex-wrap justify-content-between">
-        @foreach (var item in Model)
-        {
-            <img src=@item.imgName width="128" height="188.23529411764704" loading="lazy" style="border-radius: 0px; object-fit: fill; cursor: default;">
-
-        }
+<div class="container mt-2">
+    <div class="row d-flex align-items-stretch mb-2">        
+            <!-- Your content for the div goes here -->
+            @foreach (var item in Model)
+            {
+            <div class="col-sm-6 col-md-2">
+                <div class="card">
+                    <img src=@item.imgName class="card-img-top" alt="Image 1">
+                    <div class="card-body">                        
+                        <p class="card-text">@item.dishHeadName</p>
+                    </div>
+                </div>
+            </div>
+            }
     </div>
-</section>
-
-
-
-
+</div>
 <!--Categories Section End -->
