@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
@@ -16,6 +16,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Optimum.CafePos.Models\Optimum.CafePos.Models.csproj" />
     <ProjectReference Include="..\Optimum.CafePos.WebServices\Optimum.CafePos.WebServices.csproj" />
+    
+    
   </ItemGroup>
 
 </Project>

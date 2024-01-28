@@ -14,23 +14,25 @@ namespace Optimum.CafePos.Web.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         string apiBaseUrl = "https://optimum.co.in/cafeposapp/Android/";
-        
+
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            
+
         }
 
         [HttpGet]
         public async Task<IActionResult> IndexAsync()
         {
-           
+
             var httpClientWrapper = new HttpClientWrapper<IEnumerable<ItemHead>>(apiBaseUrl);
 
             // Making a GET request
             var result = await httpClientWrapper.GetAsync("androiddishhead?locationShortName=sohanram");
-           
+            //Set value in Session object.
+            HttpContext.Session.Add<IEnumerable<ItemHead>>("Person", result);
+
 
             // Making a POST request
             // var requestData = new MyRequestClass { /* ... */ };
@@ -57,7 +59,7 @@ namespace Optimum.CafePos.Web.Controllers
             return View(result);
         }
 
-        
+
 
         public IActionResult GetOtp()
         {
