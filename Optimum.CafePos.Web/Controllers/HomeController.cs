@@ -5,6 +5,8 @@ using Optimum.CafePos.Web.Models;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 using Optimum.CafePos.WebServices;
+using Optimum.CafePos.Models.Constants;
+using Microsoft.AspNetCore.Http;
 
 namespace Optimum.CafePos.Web.Controllers
 {
@@ -28,6 +30,7 @@ namespace Optimum.CafePos.Web.Controllers
 
             // Making a GET request
             var result = await httpClientWrapper.GetAsync("androiddishhead?locationShortName=sohanram");
+           
 
             // Making a POST request
             // var requestData = new MyRequestClass { /* ... */ };
@@ -47,11 +50,14 @@ namespace Optimum.CafePos.Web.Controllers
             var category = result.First();
             category.IsSelected = true;
 
-
+            // ViewBag.Products = await _shoppingService.GetRaws(category.DishHeadCode);
+            ViewBag.CategoryName = category.dishHeadName;
 
 
             return View(result);
         }
+
+        
 
         public IActionResult GetOtp()
         {

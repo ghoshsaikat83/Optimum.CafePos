@@ -5,14 +5,14 @@
 }
 <!--Categories Section Begin-->
 
-<div class="container mt-2">
-    <div class="row d-flex align-items-stretch mb-2">        
+<div class="container">
+    <div class="row">           
             <!-- Your content for the div goes here -->
             @foreach (var item in Model)
             {
-            <div class="col-sm-6 col-md-2">
+            <div class="col-6 col-sm-2 mb-4 mb-lg-0">
                 <div class="card">
-                    <img src=@item.imgName class="card-img-top" alt="Image 1">
+                    <img src=@item.imgName class="img-fluid">
                     <div class="card-body">                        
                         <p class="card-text">@item.dishHeadName</p>
                     </div>
