@@ -23,9 +23,12 @@ namespace Optimum.CafePos.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> IndexAsync()
+        public IActionResult Index()
         {
-            return View();
+            // Retrieve the session value
+            IEnumerable<ItemHead> storedValue = HttpContext.Session.Get<IEnumerable<ItemHead>>("Person");
+
+            return View(storedValue);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

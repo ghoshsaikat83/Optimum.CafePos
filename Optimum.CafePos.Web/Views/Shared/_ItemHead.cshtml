@@ -1,23 +1,24 @@
 ﻿@using Optimum.CafePos.Models
 @model IEnumerable<ItemHead>
 <!--Categories Section Begin-->
-<div class="row gy-3 mt-5">
-    <!-- Your content for the div goes here -->
-    @foreach (var item in Model)
-    {
+<div class="container">
+    <div class="row gy-3 mt-5">
+        <!-- Your content for the div goes here -->
+        @foreach (var item in Model)
+        {
 
-        <div class="col-md-4 col-lg-2 col-sm-12">
-           <a href="@Url.Action("Index", "ItemList")">
-                <div class="card h-100">
-                    <img src=@item.imgName class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">@item.dishHeadName</p>
+            <div class="col-md-4 col-lg-2 col-sm-12">
+                <a href="@Url.Action("Index", "ItemList")">
+                    <div class="card h-100">
+                        <img src=@item.imgName class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">@item.dishHeadName</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
 
-    }
-
+        }
+    </div>
 </div>
 <!--Categories Section End -->
