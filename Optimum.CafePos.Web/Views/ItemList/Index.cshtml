@@ -6,27 +6,28 @@
 
 
 
-<nav class="navbar navbar-expand-lg p-3 navbar-light" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-expand-lg p-3 navbar-light">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+            <ul class="navbar-nav d-flex ">
                 @{
                     int count = 0;
                 }
                 @foreach (var item in Model)
                 {
-                    if (count < 4)
+                    if (count < 5)
                     {
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">@item.dishHeadName</a>
+                        <li class="nav-item" style="font-size: small; text-align: center;">
+                            <a class="nav-link custom-hover-link" aria-current="page" href="#">@item.dishHeadName</a>
                         </li>
+                        count++;
                     }
 
-                    count++;
+
                 }
 
                 <li class="nav-item dropdown">
@@ -35,9 +36,12 @@
                         More
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        @for (int i = 5; i < (Model.Count()); i++)
+                        {
+                            <li class="nav-item" style="font-size: small; text-align: center;">
+                                <a class="dropdown-item" href="#">@Model.ElementAt(i).dishHeadName</a>
+                            </li>
+                        }
                     </ul>
                 </li>
             </ul>

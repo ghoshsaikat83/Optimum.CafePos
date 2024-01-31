@@ -1,4 +1,19 @@
 
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', sans-serif; /* Use Helvetica as the primary font */
+}
+
+/* Custom CSS for hover effect */
+.custom-hover-link:hover {
+    background-color: #F8F9FA; /* Change to your desired background color */
+}
+
+
+
+
 .cat-0-list {
     color: #666;
     font-size: 14px;
