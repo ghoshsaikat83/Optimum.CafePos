@@ -6,6 +6,26 @@ body {
     font-family: 'Helvetica', sans-serif; /* Use Helvetica as the primary font */
 }
 
+/* Custom styles for the menu */
+.navbar-nav img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    border-radius: 50%;
+}
+
+/* Override Bootstrap's default styles for small screens */
+@media (max-width: 575.98px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 8px;
+    }
+}
+
+
 /* Custom CSS for hover effect */
 .custom-hover-link:hover {
     background-color: #F8F9FA; /* Change to your desired background color */
