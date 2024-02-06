@@ -12,21 +12,32 @@ namespace Optimum.CafePos.Web.Controllers
 {
     public class ItemListController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+
         string apiBaseUrl = "https://optimum.co.in/cafeposapp/Android/";
 
+        // requires using Microsoft.Extensions.Configuration;
+        private readonly IConfiguration Configuration;
 
-        public ItemListController(ILogger<HomeController> logger)
+        public ItemListController(IConfiguration configuration)
         {
-            _logger = logger;
-
+            Configuration = configuration;
         }
 
+
+
+
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
             // Retrieve the session value
             IEnumerable<ItemHead> storedValue = HttpContext.Session.Get<IEnumerable<ItemHead>>("Person");
+
+            var httpClientWrapper = new HttpClientWrapper<IEnumerable<Item>>(apiBaseUrl);
+
+            // Making a GET request
+            var result = await httpClientWrapper.GetAsync("androiditemmaster?locationShortName=sohanram&dishHeadCode=7");
+            //Set value in Session object.
+            HttpContext.Session.Add<IEnumerable<Item>>("Item", result);
 
             return View(storedValue);
         }

@@ -36,7 +36,10 @@
                 <input class="form-control" type="text" placeholder='Search "butter"'>
             </div>
             <div class="ms-2">
-                <button class="btn btn-primary">Login</button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Login
+                </button>
             </div>
             <div class="ms-2">
                 <button class="btn btn-outline-dark">
@@ -51,3 +54,31 @@
         </div>
     </div>
 </header>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="text-center">
+                    <img src="https://i.imgur.com/u5cP8rr.png" width="60">
+                </div>
+                <div class="text-center mt-3">
+
+                    <span class="info-text">Please enter your mobile number to signup or login</span>
+
+                </div>
+                <div class="position-relative mt-3 form-input">
+                    <input class="form-control">
+                    <i class='bx bxs-phone'></i>
+                </div>
+
+
+                <div class=" mt-5 d-flex justify-content-between align-items-center">
+                    <span>Login or Signup</span>
+                    <button class="go-button"><i class='bx bxs-right-arrow-alt'></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

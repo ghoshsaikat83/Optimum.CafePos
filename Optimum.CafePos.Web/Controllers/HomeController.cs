@@ -13,23 +13,23 @@ namespace Optimum.CafePos.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        string apiBaseUrl = "https://optimum.co.in/cafeposapp/Android/";
+        readonly string apiBaseUrl = "https://optimum.co.in/cafeposapp/Android/";
+        private readonly IConfiguration Configuration;
 
-
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IConfiguration configuration)
         {
-            _logger = logger;
-
+            Configuration = configuration;
         }
+
 
         [HttpGet]
         public async Task<IActionResult> IndexAsync()
         {
 
             var httpClientWrapper = new HttpClientWrapper<IEnumerable<ItemHead>>(apiBaseUrl);
-
+            var location = Configuration["LocationName"];
             // Making a GET request
-            var result = await httpClientWrapper.GetAsync("androiddishhead?locationShortName=sohanram");
+            var result = await httpClientWrapper.GetAsync("androiddishhead?locationShortName=" + location + "");
             //Set value in Session object.
             HttpContext.Session.Add<IEnumerable<ItemHead>>("Person", result);
 

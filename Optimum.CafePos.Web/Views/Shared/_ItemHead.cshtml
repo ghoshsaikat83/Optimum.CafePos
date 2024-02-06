@@ -2,22 +2,20 @@
 @model IEnumerable<ItemHead>
 <!--Categories Section Begin-->
 <div class="container">
-    <div class="row gy-3 mt-5">
+    <div class="row row-cols-1 row-cols-md-6 g-4 mt-4">
         <!-- Your content for the div goes here -->
         @foreach (var item in Model)
         {
-
-            <div class="col-md-4 col-lg-2 col-sm-12">
-                <a href="@Url.Action("Index", "ItemList")">
+            <a href="@Url.Action("Index", "ItemList")">
+                <div class="col h-100">
                     <div class="card h-100">
-                        <img src=@item.imgName class="card-img-top" alt="...">
+                        <img src=@item.imgName class="card-img-top rounded" alt="...">
                         <div class="card-body">
-                            <p class="card-text">@item.dishHeadName</p>
+                            <p class="text-capitalize text-center fs-6">@item.dishHeadName</p>
                         </div>
                     </div>
-                </a>
-            </div>
-
+                </div>
+            </a>
         }
     </div>
 </div>
